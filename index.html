@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruby</title>
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
+    <meta content="#dc2626" data-react-helmet="true" name="theme-color" />
+    <meta
+      name="title"
+      content="Ruby - Take Your Server to the Next Level"
+    />
+    <meta
+      name="description"
+      content="Ruby is a versatile Discord bot with features like giveaways, leveling, Minecraft server status tracking, games, button roles, and a much more, designed to enhance server management and engagement."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="#" />
+    <meta
+      property="og:title"
+      content="Ruby - Take Your Server to the Next Level"
+    />
+    <meta
+      property="og:description"
+      content="Ruby is a versatile Discord bot with features like giveaways, leveling, Minecraft server status tracking, games, button roles, and a much more, designed to enhance server management and engagement."
+    />
+    <meta property="og:image" content="./images/logo.png" />
+    <meta property="og:color" content="#5b21b6" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="#" />
+    <meta
+      property="twitter:title"
+      content="Ruby - Take Your Server to the Next Level"
+    />
+    <meta
+      property="twitter:description"
+      content="Ruby is a versatile Discord bot with features like giveaways, leveling, Minecraft server status tracking, games, button roles, and a much more, designed to enhance server management and engagement."
+    />
+    <meta property="twitter:image" content="./images/logo.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/script.js"></script>
+  </head>
+  <body
+    class="bg-black text-white max-h-[400px] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-red-500"
+  >
+    <div
+      id="loader"
+      class="fixed inset-0 bg-black z-50 flex items-center justify-center"
+    >
+      <div
+        class="w-12 h-12 border-4 border-red-500 border-t-transparent rounded-full animate-spin"
+      ></div>
+    </div>
+    <nav class="fixed w-full z-50 top-0">
+      <div class="nav-blur bg-black/30 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20">
+            <div class="flex items-center gap-2">
+              <img
+                src="images/logo.png"
+                alt="Ruby Logo"
+                class="w-10 h-10 rounded-lg"
+              />
+              <span
+                class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-700"
+                >Ruby</span
+              >
+            </div>
+
+            <div class="hidden md:flex gap-8">
+              <a
+                href="#hero"
+                class="text-white/70 hover:text-white transition-colors"
+                >Home</a
+              >
+              <a
+                href="#features"
+                class="text-white/70 hover:text-white transition-colors"
+                >Features</a
+              >
+              <a
+                href="#commands"
+                class="text-white/70 hover:text-white transition-colors"
+                >Commands</a
+              >
+              <a
+                href="#testimonials"
+                class="text-white/70 hover:text-white transition-colors"
+                >Testimonials</a
+              >
+            </div>
+
+            <div class="md:hidden">
+              <button onclick="toggleMobileMenu()" class="text-white p-2">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    class="menu-icon"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <a href="https://discord.com/oauth2/authorize?client_id=1375849162041720954" class="hidden md:block">
+              <button
+                class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-lg transition-all duration-300"
+              >
+                Add to Discord
+              </button>
+            </a>
+          </div>
+
+          <div id="mobileMenu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-black/50 rounded-lg mt-2">
+              <a
+                href="#hero"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Home</a
+              >
+              <a
+                href="#features"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Features</a
+              >
+              <a
+                href="#commands"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Commands</a
+              >
+              <a
+                href="#testimonials"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Testimonials</a
+              >
+              <a
+                href="https://discord.com/oauth2/authorize?client_id=1375849162041720954"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Add to Discord</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section id="hero" class="min-h-screen relative overflow-hidden">
+      <div class="absolute inset-0 gradient-bg opacity-10"></div>
+      <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-900/40 via-black to-black"
+      ></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-8 text-center lg:text-left mt-16 lg:mt-0">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+              Take Your Server to the
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-700"
+                >Next Level</span
+              >
+            </h1>
+            <p class="text-lg md:text-xl text-white/70">
+              Experience the finest Discord music bot, bringing a symphony of sound
+              and rhythm to your server.
+            </p>
+            <div
+              class="flex flex-col gap-4 sm:flex-row sm:gap-8 justify-center lg:justify-start"
+            >
+              <a
+                href="https://discord.com/oauth2/authorize?client_id=1375849162041720954"
+                class="inline-flex items-center justify-center gradient-bg px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-opacity duration-300"
+              >
+                Add to Discord
+              </a>
+              <a
+                href="#commands"
+                class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 px-8 py-4 rounded-xl font-semibold transition-colors duration-300"
+              >
+                View Commands
+              </a>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="lg:hidden"></div>
+            <div
+              class="lg:block hidden absolute inset-0 bg-red-500 rounded-3xl blur-3xl opacity-20"
+            ></div>
+            <img
+              src="images/logo.png"
+              alt="Bot Dashboard"
+              class="relative rounded-3xl w-full max-w-md mx-auto sm:max-w-full md:w-auto hidden lg:block"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="features" class="py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold mb-4">Features of Ruby</h2>
+          <p class="text-xl text-white/70">
+            Everything you need to immerse yourself and your community in the ultimate music experience on Discord.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="feature-card p-8 rounded-2xl">
+            <div
+              class="w-14 h-14 gradient-bg rounded-xl mb-6 flex items-center justify-center text-2xl"
+            >
+              ⚡
+            </div>
+            <h3 class="text-2xl font-bold mb-4">99.9% Uptime</h3>
+            <p class="text-white/70">
+              Ruby runs 24/7 with industry-leading uptime, ensuring your
+              server is always managed without interruptions.
+            </p>
+          </div>
+          <div class="feature-card p-8 rounded-2xl">
+            <div
+              class="w-14 h-14 gradient-bg rounded-xl mb-6 flex items-center justify-center text-2xl"
+            >
+              🎵
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Unleash the Sound</h3>
+            <p class="text-white/70">
+              Elevate your server's atmosphere with advanced music playback, including
+              high-quality audio, seamless queues, custom playlists, and intuitive controls.
+            </p>
+          </div>
+          <div class="feature-card p-8 rounded-2xl">
+            <div
+              class="w-14 h-14 gradient-bg rounded-xl mb-6 flex items-center justify-center text-2xl"
+            >
+              ✨
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Audio Filters</h3>
+            <p class="text-white/70">
+              Customize your listening experience with a variety of unique audio filters,
+              bassboost, lofi, and more, to perfectly match your mood.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="commands" class="py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold mb-4">Commands</h2>
+          <p class="text-xl text-white/70">
+            Explore all available bot commands
+          </p>
+        </div>
+        <div class="space-y-6" id="commands-container"></div>
+      </div>
+    </section>
+    <section id="testimonials" class="py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold mb-4 text-white">What Our Users Say</h2>
+          <p class="text-xl text-white/70">
+            See how Ruby is transforming Discord server management for our
+            users.
+          </p>
+        </div>
+        <div class="relative">
+          <div
+            class="flex overflow-x-auto space-x-8 pb-10 [&amp;::-webkit-scrollbar]:h-1 [&amp;::-webkit-scrollbar-thumb]:bg-red-500 [&amp;::-webkit-scrollbar-track]:rounded-full [&amp;::-webkit-scrollbar-thumb]:rounded-full"
+          >
+            <div
+              class="testimonial-card feature-card p-8 rounded-2xl min-w-[400px] max-w-[500px]"
+            >
+              <div
+                class="w-16 h-16 gradient-bg rounded-full mb-6 flex items-center justify-center text-2xl"
+              >
+                <img
+                  class="rounded-full"
+                  src="./images/user.png"
+                  alt="User 1"
+                />
+              </div>
+              <p class="text-white/70 text-lg mb-4">
+                "This bot is an absolute ear-pleaser! Elevating my server's soundscape has never been easier.
+                The audio quality is robust, and the performance is top-notch.
+                Highly recommend it for any Discord music enthusiast!"
+              </p>
+              <h4 class="text-xl font-bold text-white">Samay</h4>
+              <p class="text-sm text-white/70">Star User</p>
+            </div>
+            <div
+              class="testimonial-card feature-card p-8 rounded-2xl min-w-[400px] max-w-[500px]"
+            >
+              <div
+                class="w-16 h-16 gradient-bg rounded-full mb-6 flex items-center justify-center text-2xl"
+              >
+                <img
+                  class="rounded-full"
+                  src="./images/user.png"
+                  alt="User 2"
+                />
+              </div>
+              <p class="text-white/70 text-lg mb-4">
+                "Ruby is my new go-to for setting the vibe in my server.
+                The commands are intuitive, and the audio customization is fantastic!"
+              </p>
+              <h4 class="text-xl font-bold text-white">Anushka</h4>
+              <p class="text-sm text-white/70">Star User</p>
+            </div>
+            <div
+              class="testimonial-card feature-card p-8 rounded-2xl min-w-[400px] max-w-[500px]"
+            >
+              <div
+                class="w-16 h-16 gradient-bg rounded-full mb-6 flex items-center justify-center text-2xl"
+              >
+                <img
+                  class="rounded-full"
+                  src="./images/user.png"
+                  alt="User 3"
+                />
+              </div>
+              <p class="text-white/70 text-lg mb-4">
+               "I was skeptical at first, but wow! This bot exceeded my expectations.
+                The seamless music playback is a true mood-setter,
+                and the interactive features keep my members grooving!"
+              </p>
+              <h4 class="text-xl font-bold text-white">Ronan Void</h4>
+              <p class="text-sm text-white/70">Star User</p>
+            </div>
+            <div
+              class="testimonial-card feature-card p-8 rounded-2xl min-w-[400px] max-w-[500px]"
+            >
+              <div
+                class="w-16 h-16 gradient-bg rounded-full mb-6 flex items-center justify-center text-2xl"
+              >
+                <img
+                  class="rounded-full"
+                  src="./images/user.png"
+                  alt="User 4"
+                />
+              </div>
+              <p class="text-white/70 text-lg mb-4">
+                "A must-have for any serious Discord community. The support team
+                is great, and the bot runs smoother than any I've tried before!"
+              </p>
+              <h4 class="text-xl font-bold text-white">Evelyn Starfall</h4>
+              <p class="text-sm text-white/70">Star User</p>
+            </div>
+            <div
+              class="testimonial-card feature-card p-8 rounded-2xl min-w-[400px] max-w-[500px]"
+            >
+              <div
+                class="w-16 h-16 gradient-bg rounded-full mb-6 flex items-center justify-center text-2xl"
+              >
+                <img
+                  class="rounded-full"
+                  src="./images/user.png"
+                  alt="User 5"
+                />
+              </div>
+              <p class="text-white/70 text-lg mb-4">
+                "I replaced three different bots with this one! It does
+                everything I need and more. The customization options are next
+                level."
+              </p>
+              <h4 class="text-xl font-bold text-white">Orion Ashford</h4>
+              <p class="text-sm text-white/70">Star User</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="bg-black min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 md:p-16 lg:p-32"
+    >
+      <div class="text-center mb-20">
+        <h2 class="text-5xl font-bold mb-4 text-white">Connect With Us</h2>
+        <p class="text-xl text-white/70">
+          Join our community and contribute to development.
+        </p>
+      </div>
+      <div
+        class="w-full max-w-2xl flex flex-col gap-8 items-center sm:px-6 lg:px-8"
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white/5 border border-white/10 rounded-2xl p-6 w-full max-w-md transition-colors feature-card"
+        >
+          <div class="flex items-center gap-4 mb-6">
+            <img
+              src="images/logo.png"
+              alt="Server Icon"
+              class="w-12 h-12 rounded-xl"
+            />
+            <div>
+              <h3 class="text-white text-xl font-bold">Ruby Community</h3>
+              <p class="text-white/70 text-sm">Official Discord Server</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4 text-white/70 text-sm">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                <span>393 Online</span>
+              </div>
+              <div class="w-1 h-1 rounded-full bg-white/20"></div>
+              <span>807 Members</span>
+            </div>
+            <a
+              href="https://discord.gg/5b9yHFaJPd"
+              class="bg-[#5865F2] hover:bg-[#4752C4] text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+              >Join Server</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-center py-16">
+        <button
+          onclick="scrollToTop()"
+          class="group bg-white/5 border border-white/10 rounded-2xl p-4 transition-all hover:border-red-500"
+        >
+          <svg
+            class="w-6 h-6 text-white/70 group-hover:text-white transition-colors"
+            fill="none"
+            viewbox="0 0 24 24"
+            stroke="currentcolor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <footer class="text-white py-16 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <img
+              class="h-10 mb-6"
+              src="./images/logo.png"
+              alt="Ruby Logo"
+            />
+            <p class="text-lg text-white/70">
+              Ruby is the ultimate tool for transforming your Discord server's
+              audio experience with powerful features like high-quality playback,
+              immersive filters, seamless control, and more!
+            </p>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-4">
+              <li>
+                <a href="#hero" class="text-white/70 hover:text-white">Home</a>
+              </li>
+              <li>
+                <a href="#features" class="text-white/70 hover:text-white"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="#commands" class="text-white/70 hover:text-white"
+                  >Commands</a
+                >
+              </li>
+              <li>
+                <a href="#testimonials" class="text-white/70 hover:text-white"
+                  >Testimonials</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+            <ul class="space-y-4">
+              <li>
+                <a href="https://discord.com/oauth2/authorize?client_id=1375849162041720954" class="text-white/70 hover:text-white">Invite</a>
+              </li>
+              <li>
+                <a href="https://discord.gg/5b9yHFaJPd" class="text-white/70 hover:text-white">Discord</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-12 border-t border-white/20 pt-6 text-center">
+          <p class="text-sm text-white/50">
+            © 2025 Ruby. All rights reserved. • Not affiliated with Discord
+            Inc.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
